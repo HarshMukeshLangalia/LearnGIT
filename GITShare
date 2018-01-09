@@ -1,0 +1,59 @@
+What is Github?
+GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere. GitHub essentials like repositories, branches, commits, and pull requests to any project. For using it, you just need a GitHub.com account and Internet access.
+
+Creating and Using Repository
+A repository is usually used to organize a single project. Repositories can contain folders and files, images, videos, spreadsheets,
+and data sets – anything your project needs. We recommend including a README, or a file with information about your project. To create
+a new repository following steps are required.
+Step 1: In the upper right corner, next to your username, click and then click New repository.
+Step 2: Name your repository “Spring-Project“.
+Step 3: Write a short description.
+Step 4: Select Initialize this repository with a README.
+Step 5: Click Create repository.
+
+
+Create New Branch and Managing
+Branching is the way to work on different versions of a repository at one time. By default your repository has one branch named master 
+which is considered to be the definitive branch. We use branches to experiment and make edits before committing them to master.
+When you create a branch off the master branch, you’re making a copy, or snapshot, of master as it was at that point in time.
+If someone else made changes to the master branch while you were working on your branch, you could pull in those updates.
+
+Step 1: Go to your new repository Spring-Project.
+Step 2: Click the drop down at the top of the file list that says branch: master.
+Step 3: Type a branch name, “UAT”, into the new branch text box.
+Step 4: Select the blue Create branch box or hit “Enter” on your keyboard.
+
+
+Pushing changes to a file to GitHub as commits
+On GitHub, saved changes are called commits. Each commit has an associated commit message, which is a description explaining why a 
+particular change was made. Commit messages capture the history of your changes, so other contributors can understand what you’ve done
+and why. Use following steps for Make and commit changes
+
+Step 1: Click the README.md file.
+Step 2: Click the pencil icon in the upper right corner of the file view to edit.
+Step 3: In the editor, write a bit about yourself.
+Step 4: Write a commit message that describes your changes.
+Step 5: Click Commit changes button.
+
+Open and merge a pull request
+Now that you have changes in a branch off of master, you can open a pull request.
+
+Pull Requests are the heart of collaboration on GitHub. When you open a pull request, you’re proposing your changes and requesting
+that someone review and pull in your contribution and merge them into their branch. Pull requests show diffs, or differences, of the
+content from both branches. The changes, additions, and subtractions are shown in green and red.
+
+For Open a Pull Request for changes to the README as following steps
+Step 1: Click the Pull Request tab, then from the Pull Request page, click the green New pull request button.
+Step 2: Select the branch you made, “UAT”, to compare with master (the original).
+Step 3: Look over your changes in the diffs on the Compare page, make sure they’re what you want to submit.
+Step 4: When you’re satisfied that these are the changes you want to submit, click the big green Create Pull Request button.
+Step 5: Give your pull request a title and write a brief description of your changes.
+
+
+Merge your Pull Request
+In this final step, it’s time to bring your changes together – merging your UAT branch into the master branch.
+
+Step 1: Click the green Merge pull request button to merge the changes into master.
+Step 2: Click Confirm merge.
+Step 3: Go ahead and delete the branch, since its changes have been incorporated, with the Delete branch button in the purple box.
+
