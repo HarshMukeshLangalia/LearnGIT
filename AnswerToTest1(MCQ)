@@ -1,0 +1,366 @@
+
+
+1.	
+What will be the output of the program?
+
+class A 
+{
+    final public int GetResult(int a, int b) { return 0; } 
+} 
+class B extends A 
+{ 
+    public int GetResult(int a, int b) {return 1; } 
+} 
+public class Test 
+{
+    public static void main(String args[]) 
+    { 
+        B b = new B(); 
+        System.out.println("x = " + b.GetResult(0, 1));  
+    } 
+}
+	A.	
+x = 0
+	B.	
+x = 1
+	C.	
+Compilation fails.
+	D.	
+An exception is thrown at runtime.
+
+
+Correct Answer: Option C
+
+Explanation:
+
+The code doesn't compile because the method GetResult() in class A is final and so cannot be overridden.
+
+
+
+2.	
+What will be the output of the program?
+
+class SC2 
+{
+    public static void main(String [] args) 
+    {
+        SC2 s = new SC2();
+        s.start();
+    }
+
+    void start() 
+    {
+        int a = 3;
+        int b = 4;
+        System.out.print(" " + 7 + 2 + " ");
+        System.out.print(a + b);
+        System.out.print(" " + a + b + " ");
+        System.out.print(foo() + a + b + " ");
+        System.out.println(a + b + foo());
+    }
+
+    String foo() 
+    {
+        return "foo";
+    }
+}
+	A.	
+9 7 7 foo 7 7foo
+	B.	
+72 34 34 foo34 34foo
+	C.	
+9 7 7 foo34 34foo
+	D.	
+72 7 34 foo34 7foo
+
+
+Correct Answer: Option D
+
+Explanation:
+
+Because all of these expressions use the + operator, there is no precedence to worry about and all of the expressions will be evaluated from left to right. If either operand being evaluated is a String, the + operator will concatenate the two operands; if both operands are numeric, the + operator will add the two operands.
+
+
+
+3.	
+What will be the output of the program?
+
+class BoolArray 
+{
+    boolean [] b = new boolean[3];
+    int count = 0;
+
+    void set(boolean [] x, int i) 
+    {
+        x[i] = true;
+        ++count;
+    }
+
+    public static void main(String [] args) 
+    {
+        BoolArray ba = new BoolArray();
+        ba.set(ba.b, 0);
+        ba.set(ba.b, 2);
+        ba.test();
+    }
+
+    void test() 
+    {
+        if ( b[0] && b[1] | b[2] )
+            count++;
+        if ( b[1] && b[(++count - 2)] )
+            count += 7;
+        System.out.println("count = " + count);
+    }
+}
+	A.	
+count = 0
+	B.	
+count = 2
+	C.	
+count = 3
+	D.	
+count = 4
+
+
+Correct Answer: Option C
+
+Explanation:
+
+The reference variables b and x both refer to the same boolean array. count is incremented for each call to the set() method, and once again when the first if test is true. Because of the && short circuit operator, count is not incremented during the second if test.
+
+
+
+4.	
+Which two statements are equivalent?
+
+3/2
+3<2
+3*4
+3<<2
+	A.	
+1 and 2
+	B.	
+2 and 3
+	C.	
+3 and 4
+	D.	
+1 and 4
+
+
+Correct Answer: Option C
+
+Explanation:
+
+(1) is wrong. 3/2 = 1 (integer arithmetic).
+
+(2) is wrong. 3 < 2 = false.
+
+(3) is correct. 3 * 4 = 12.
+
+(4) is correct. 3 <<2= 12. In binary 3 is 11, now shift the bits two places to the left and we get 1100 which is 12 in binary (3*2*2).
+
+
+
+
+5.	
+public void foo( boolean a, boolean b)
+{ 
+    if( a ) 
+    {
+        System.out.println("A"); /* Line 5 */
+    } 
+    else if(a && b) /* Line 7 */
+    { 
+        System.out.println( "A && B"); 
+    } 
+    else /* Line 11 */
+    { 
+        if ( !b ) 
+        {
+            System.out.println( "notB") ;
+        } 
+        else 
+        {
+            System.out.println( "ELSE" ) ; 
+        } 
+    } 
+}
+	A.	
+If a is true and b is true then the output is "A && B"
+	B.	
+If a is true and b is false then the output is "notB"
+	C.	
+If a is false and b is true then the output is "ELSE"
+	D.	
+If a is false and b is false then the output is "ELSE"
+Correct Answer: Option C
+
+Explanation:
+
+Option C is correct. The output is "ELSE". Only when a is false do the output lines after 11 get some chance of executing.
+
+Option A is wrong. The output is "A". When a is true, irrespective of the value of b, only the line 5 output will be executed. The condition at line 7 will never be evaluated (when a is true it will always be trapped by the line 12 condition) therefore the output will never be "A && B".
+
+Option B is wrong. The output is "A". When a is true, irrespective of the value of b, only the line 5 output will be executed.
+
+Option D is wrong. The output is "notB".
+
+
+6.	
+What will be the output of the program?
+
+Float f = new Float("12"); 
+switch (f) 
+{
+    case 12: System.out.println("Twelve"); 
+    case 0: System.out.println("Zero"); 
+    default: System.out.println("Default"); 
+}
+	A.	
+Zero
+	B.	
+Twelve
+	C.	
+Default
+	D.	
+Compilation fails
+
+
+Correct Answer: Option D
+
+Explanation:
+
+The switch statement can only be supported by integers or variables more "narrow" than an integer i.e. byte, char, short. Here a Float wrapper object is used and so the compilation fails.
+
+
+
+7.	
+What will be the output of the program?
+
+public class Test 
+{  
+    public static void aMethod() throws Exception 
+    {
+        try /* Line 5 */
+        {
+            throw new Exception(); /* Line 7 */
+        } 
+        finally /* Line 9 */
+        {
+            System.out.print("finally "); /* Line 11 */
+        } 
+    } 
+    public static void main(String args[]) 
+    {
+        try 
+        {
+            aMethod();  
+        } 
+        catch (Exception e) /* Line 20 */
+        {
+            System.out.print("exception "); 
+        } 
+        System.out.print("finished"); /* Line 24 */
+    } 
+}
+	A.	
+finally
+	B.	
+exception finished
+	C.	
+finally exception finished
+	D.	
+Compilation fails
+
+
+Correct Answer: Option C
+
+Explanation:
+
+This is what happens:
+
+(1) The execution of the try block (line 5) completes abruptly because of the throw statement (line 7).
+
+(2) The exception cannot be assigned to the parameter of any catch clause of the try statement therefore the finally block is executed (line 9) and "finally" is output (line 11).
+
+(3) The finally block completes normally, and then the try statement completes abruptly because of the throw statement (line 7).
+
+(4) The exception is propagated up the call stack and is caught by the catch in the main method (line 20). This prints "exception".
+
+(5) Lastly program execution continues, because the exception has been caught, and "finished" is output (line 24).
+
+
+8.	
+Which statement is true for the class java.util.ArrayList?
+
+	A.	
+The elements in the collection are ordered.
+	B.	
+The collection is guaranteed to be immutable.
+	C.	
+The elements in the collection are guaranteed to be unique.
+	D.	
+The elements in the collection are accessed using a unique key.
+
+Correct Answer: Option A
+
+Explanation:
+
+Yes, always the elements in the collection are ordered.
+
+
+
+
+9.	
+Which is true about a method-local inner class?
+
+	A.	
+It must be marked final.
+	B.	
+It can be marked abstract.
+	C.	
+It can be marked public.
+	D.	
+It can be marked static.
+
+
+Correct Answer: Option B
+
+Explanation:
+
+Option B is correct because a method-local inner class can be abstract, although it means a subclass of the inner class must be created if the abstract class is to be used (so an abstract method-local inner class is probably not useful).
+
+Option A is incorrect because a method-local inner class does not have to be declared final (although it is legal to do so).
+
+C and D are incorrect because a method-local inner class cannot be made public (remember-you cannot mark any local variables as public), or static.
+
+
+10.	
+class X implements Runnable 
+{ 
+    public static void main(String args[]) 
+    {
+        /* Missing code? */
+    } 
+    public void run() {} 
+}
+Which of the following line of code is suitable to start a thread ?
+	A.	
+Thread t = new Thread(X);
+	B.	
+Thread t = new Thread(X); t.start();
+	C.	
+X run = new X(); Thread t = new Thread(run); t.start();
+	D.	
+Thread t = new Thread(); x.run();
+
+
+Correct Answer: Option C
+
+Explanation:
+
+Option C is suitable to start a thread.
+
+
+
