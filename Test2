@@ -1,0 +1,26 @@
+---> Use google wisely, do not copy the codes(it would waste your time)
+---> document your code with approach (pseudocode and comments)
+---> All questions carry equal scores of 20 each.
+---> Ideal time to complete the quiz should be 2 hours.(remember coding is not racing but   we have deadlines in real world)
+--->Submission: Make a .txt file and share it with me on my email - harshlangaliaofficial@gmail.com with Subject - "Programming Test - 2"
+--->file should have your name, pseudo code, comments, implementation code (all the classes ), difficulties in writing this test.
+----> Think of all edge cases apart from sample inputs provided.
+
+
+1) Input : arr[] = {1, 4, 0, 9, -9, -4, -6}  
+        take input subarray size
+Output: total of all Min of subarrays + total of all Max of subarrays
+
+2) Input: I am a good developer, I make mistakes, I learn, I grow.
+output: Most Frequent word is  "I" occurred 4 times.
+
+3) Write a code to demonstrate your knowledge of Dynamic method dispatch. Write a code to demonstrate your knowledge of compile time polymorphism.
+
+4) Write a code to check if the input contains all the elements from 'a' to 'z'.
+
+5) Write a code to design a boolean algorithm that returns a true when two inputs are different words but has same characters present.
+ ex Mummy = yMumm (return true)
+ ex Tom = omT (return true)
+ ex Man=aNm (return false)
+
+GOOD LUCK ...
