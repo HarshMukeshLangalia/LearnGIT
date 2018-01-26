@@ -1,0 +1,1716 @@
+
+Instructions to be strictly followed:
+
+--> create a excel .xls solution file with your name and test number (example Harsh_test3.xls)
+--> Do not copy paste whole question.
+--> Each Set should be a sheet in your .xls file( you will be having 4 sheets for 4 sets in one file)
+--> Mention your answer in following fashion with shortest explanation -
+Sheet 1
+SET 1
+1 - A static method - on instantiation
+2 - C Null cannot be compared
+3 - D compilation error due to semicolon missing
+.
+.
+.something
+
+Sheet 2
+SET 2
+1 - A static method - on instantiation
+2 - C Null cannot be compared
+3 - D compilation error due to semicolon missing
+.
+.
+something
+
+Sheet 3
+set 3 and so on...
+
+--> Any instructions not followed will not be evaluated.
+--> Ask and do not assume if any doubts.
+--> Time - 80 questions - 2 hours
+
+Good luck and happy weekend!!!
+------------------------------------------------------------------------------------
+SET 1
+
+1. What will be the output of the program?
+
+public class Test 
+{
+    public int aMethod()
+    {
+        static int i = 0;
+        i++;
+        return i;
+    }
+    public static void main(String args[])
+    {
+        Test test = new Test();
+        test.aMethod();
+        int j = test.aMethod();
+        System.out.println(j);
+    }
+}
+
+A.0
+B.1
+C.2
+D.Compilation fails.
+
+
+2.What will be the output of the program?
+
+class PassA 
+{
+    public static void main(String [] args) 
+    {
+        PassA p = new PassA();
+        p.start();
+    }
+
+    void start() 
+    {
+        long [] a1 = {3,4,5};
+        long [] a2 = fix(a1);
+        System.out.print(a1[0] + a1[1] + a1[2] + " ");
+        System.out.println(a2[0] + a2[1] + a2[2]);
+    }
+
+    long [] fix(long [] a3) 
+    {
+        a3[1] = 7;
+        return a3;
+    }
+}
+
+A.12 15
+B.15 15
+C.3 4 5 3 7 5
+D.3 7 5 3 7 5
+
+
+3.What will be the output of the program?
+
+class Equals 
+{
+    public static void main(String [] args) 
+    {
+        int x = 100;
+        double y = 100.1;
+        boolean b = (x = y); /* Line 7 */
+        System.out.println(b);
+    }
+}
+
+
+A.true
+B.false
+C.Compilation fails
+D.An exception is thrown at runtime
+
+4.What will be the output of the program?
+
+class Bitwise 
+{
+    public static void main(String [] args) 
+    {
+        int x = 11 & 9;
+        int y = x ^ 3;
+        System.out.println( y | 12 );
+    }
+}
+A.0
+B.      7
+C.8
+D.14
+
+
+
+5.What will be the output of the program?
+
+class SSBool 
+{
+    public static void main(String [] args) 
+    {
+        boolean b1 = true;
+        boolean b2 = false;
+        boolean b3 = true;
+        if ( b1 & b2 | b2 & b3 | b2 ) /* Line 8 */
+            System.out.print("ok ");
+        if ( b1 & b2 | b2 & b3 | b2 | b1 ) /*Line 10*/
+            System.out.println("dokey");
+    }
+}
+A.ok
+B.dokey
+C.ok dokey
+D.No output is produced
+E.Compilation error
+
+
+6.What will be the output of the program?
+
+int x = l, y = 6; 
+while (y--) 
+{
+    x++; 
+} 
+System.out.println("x = " + x +" y = " + y);
+A.x = 6 y = 0
+B.x = 7 y = 0
+C.x = 6 y = -1
+D.Compilation fails.
+
+
+7.What will be the output of the program?
+
+for (int i = 0; i < 4; i += 2) 
+{ 
+    System.out.print(i + " "); 
+} 
+System.out.println(i); /* Line 5 */
+
+A.0 2 4
+B.0 2 4 5
+C.0 1 2 3 4
+D.Compilation fails.
+
+8.What will be the output of the program?
+
+int x = 3; 
+int y = 1; 
+if (x = y) /* Line 3 */
+{
+    System.out.println("x =" + x); 
+}
+A.x = 1
+B.x = 3
+C.Compilation fails.
+D.The code runs with no output.
+
+
+9.What will be the output of the program?
+
+public class X 
+{  
+    public static void main(String [] args) 
+    {
+        try 
+        {
+            badMethod();  
+            System.out.print("A");  
+        } 
+        catch (RuntimeException ex) /* Line 10 */
+        { 
+            System.out.print("B"); 
+        } 
+        catch (Exception ex1) 
+        { 
+            System.out.print("C"); 
+        } 
+        finally 
+        {
+            System.out.print("D"); 
+        } 
+        System.out.print("E"); 
+    } 
+    public static void badMethod() 
+    { 
+        throw new RuntimeException(); 
+    } 
+}
+A.BD
+B.BCD
+C.BDE
+D.BCDE
+
+
+10.public class ExceptionTest 
+{ 
+    class TestException extends Exception {} 
+    public void runTest() throws TestException {} 
+    public void test() /* Point X */ 
+    { 
+        runTest(); 
+    } 
+}
+At Point X on line 5, which code is necessary to make the code compile?
+
+A.No code is necessary.
+B.throws Exception
+C.catch ( Exception e )
+D.throws RuntimeException
+
+
+11.You need to store elements in a collection that guarantees that no duplicates are stored. Which one of the following interfaces provide that capability?
+
+A.Java.util.Map
+B.Java.util.List
+C.Java.util.Collection
+D.None of the above
+
+
+12.Which collection class allows you to access its elements by associating a key with an element's value, and provides synchronization?
+
+A.java.util.SortedMap
+B.java.util.TreeMap
+C.java.util.TreeSet
+D.java.util.Hashtable
+
+
+13.
+What is the numerical range of char?
+
+A.0 to 32767
+B.0 to 65535
+C.-256 to 255
+D.-32768 to 32767
+
+14.Which of the following are true statements?
+
+The Iterator interface declares only three methods: hasNext, next and remove.
+The ListIterator interface extends both the List and Iterator interfaces.
+The ListIterator interface provides forward and backward iteration capabilities.
+The ListIterator interface provides the ability to modify the List during iteration.
+The ListIterator interface provides the ability to determine its position in the List.
+A.2, 3, 4 and 5
+B.1, 3, 4 and 5
+C.3, 4 and 5
+D.1, 2 and 3
+
+15.Which method must be defined by a class implementing the java.lang.Runnable interface?
+
+A.void run()
+B.public void run()
+C.public void start()
+D.void run(int priority)
+
+16.Which two statements are true?
+
+Deadlock will not occur if wait()/notify() is used
+A thread will resume execution as soon as its sleep duration expires.
+Synchronization can prevent two objects from being accessed by the same thread.
+The wait() method is overloaded to accept a duration.
+The notify() method is overloaded to accept a duration.
+Both wait() and notify() must be called from a synchronized context.
+A.1 and 2
+B.3 and 5
+C.4 and 6
+D.1 and 3
+
+17.Which of the following statements is true?
+
+A.If assertions are compiled into a source file, and if no flags are included at runtime, assertions will execute by default.
+B.As of Java version 1.4, assertion statements are compiled by default.
+C.With the proper use of runtime arguments, it is possible to instruct the VM to disable assertions for a certain class, and to enable assertions for a certain package, at the same time.
+D.When evaluating command-line arguments, the VM gives -ea flags precedence over -da flags.
+
+
+18.What will be the output of the program?
+try 
+{
+    Float f1 = new Float("3.0");
+    int x = f1.intValue();
+    byte b = f1.byteValue();
+    double d = f1.doubleValue();
+    System.out.println(x + b + d);
+}
+catch (NumberFormatException e) /* Line 9 */
+{
+    System.out.println("bad number"); /* Line 11 */
+}
+
+A.9.0
+B.bad number
+C.Compilation fails on line 9.
+D.Compilation fails on line 11.
+
+
+19.What will be the output of the program?
+
+public class ExamQuestion6 
+{
+    static int x; 
+    boolean catch()
+    {
+        x++; 
+        return true; 
+    } 
+    public static void main(String[] args)
+    {
+        x=0; 
+        if ((catch() | catch()) || catch()) 
+            x++; 
+        System.out.println(x); 
+    } 
+}
+A.1
+B.2
+C.3
+D.Compilation Fails
+
+
+
+20.What will be the output of the program?
+
+String s = "hello"; 
+Object o = s; 
+if( o.equals(s) )
+{
+    System.out.println("A"); 
+} 
+else
+{
+    System.out.println("B"); 
+} 
+if( s.equals(o) )
+{
+    System.out.println("C"); 
+} 
+else
+{ 
+    System.out.println("D"); 
+}
+
+A
+B
+C
+D
+
+A.1 and 3
+B.2 and 4
+C.3 and 4
+D.1 and 2
+
+ ------------------------------------------------------------
+ 
+SET 2
+
+
+1.
+What will be the output of the program?
+
+class Super
+{ 
+    public int i = 0; 
+
+    public Super(String text) /* Line 4 */
+    {
+        i = 1; 
+    } 
+} 
+
+class Sub extends Super
+{
+    public Sub(String text)
+    {
+        i = 2; 
+    } 
+
+    public static void main(String args[])
+    {
+        Sub sub = new Sub("Hello"); 
+        System.out.println(sub.i); 
+    } 
+}
+A.0
+B.1
+C.2
+D.Compilation fails.
+
+2.What will be the output of the program?
+
+class Base
+{ 
+    Base()
+    {
+        System.out.print("Base");
+    }
+} 
+public class Alpha extends Base
+{ 
+    public static void main(String[] args)
+    { 
+        new Alpha(); /* Line 12 */
+        new Base(); /* Line 13 */
+    } 
+}
+A.Base
+B.BaseBase
+C.Compilation fails
+D.The code runs with no output
+
+3.What will be the output of the program?
+
+import java.util.*;
+public class NewTreeSet2 extends NewTreeSet 
+{
+    public static void main(String [] args) 
+    {
+        NewTreeSet2 t = new NewTreeSet2();
+        t.count();
+    }
+}
+protected class NewTreeSet
+{
+    void count() 
+    {
+        for (int x = 0; x < 7; x++,x++ ) 
+        {
+            System.out.print(" " + x);
+        }
+    }
+}
+A.0 2 4
+B.0 2 4 6
+C.Compilation fails at line 2
+D.Compilation fails at line 10
+
+4.Which two statements are true for any concrete class implementing the java.lang.Runnable interface?
+
+You can extend the Runnable interface as long as you override the public run() method.
+The class must contain a method called run() from which all code for that thread will be initiated.
+The class must contain an empty public void method named run().
+The class must contain a public void method named runnable().
+The class definition must include the words implements Threads and contain a method called run().
+The mandatory method must be public, with a return type of void, must be called run(), and cannot take any arguments.
+A.1 and 3
+B.2 and 4
+C.1 and 5
+D.2 and 6
+
+5.
+What will be the output of the program?
+
+public class X 
+{  
+    public static void main(String [] args) 
+    {
+        try 
+        {
+            badMethod();  
+            System.out.print("A"); 
+        }  
+        catch (Exception ex) 
+        {
+            System.out.print("B");  
+        } 
+        finally 
+        {
+            System.out.print("C"); 
+        } 
+        System.out.print("D"); 
+    }  
+    public static void badMethod() 
+    {
+        throw new Error(); /* Line 22 */
+    } 
+}
+A.ABCD
+B.Compilation fails.
+C.C is printed before exiting with an error message.
+D.BC is printed before exiting with an error message.
+
+6.
+What will be the output of the program?
+
+public class X 
+{  
+    public static void main(String [] args) 
+    {
+        try 
+        {
+            badMethod(); /* Line 7 */
+            System.out.print("A"); 
+        } 
+        catch (Exception ex) /* Line 10 */
+        {
+            System.out.print("B"); /* Line 12 */
+        } 
+        finally /* Line 14 */
+        {
+            System.out.print("C"); /* Line 16 */
+        }  
+        System.out.print("D"); /* Line 18 */
+    } 
+    public static void badMethod() 
+    {
+        throw new RuntimeException(); 
+    } 
+}
+A.AB
+B.BC
+C.ABC
+D.BCD
+
+7.
+Which interface does java.util.Hashtable implement?
+
+A.Java.util.Map
+B.Java.util.List
+C.Java.util.HashTable
+D.Java.util.Collection
+
+8.
+What will be the output of the program?
+
+package foo; 
+import java.util.Vector; /* Line 2 */
+private class MyVector extends Vector 
+{
+    int i = 1; /* Line 5 */
+    public MyVector() 
+    { 
+        i = 2; 
+    } 
+} 
+public class MyNewVector extends MyVector 
+{
+    public MyNewVector () 
+    { 
+        i = 4; /* Line 15 */
+    } 
+    public static void main (String args []) 
+    { 
+        MyVector v = new MyNewVector(); /* Line 19 */
+    } 
+}
+A.Compilation will succeed.
+B.Compilation will fail at line 3.
+C.Compilation will fail at line 5.
+D.Compilation will fail at line 15.
+
+9.
+What two statements are true about properly overridden hashCode() and equals() methods?
+
+hashCode() doesn't have to be overridden if equals() is.
+equals() doesn't have to be overridden if hashCode() is.
+hashCode() can always return the same value, regardless of the object that invoked it.
+equals() can be true even if it's comparing different objects.
+A.1 and 2
+B.2 and 3
+C.3 and 4
+D.1 and 3
+
+10.
+Which three are methods of the Object class?
+
+notify();
+notifyAll();
+isInterrupted();
+synchronized();
+interrupt();
+wait(long msecs);
+sleep(long msecs);
+yield();
+A.1, 2, 4
+B.2, 4, 5
+C.1, 2, 6
+D.2, 3, 4
+
+11.
+Which cannot directly cause a thread to stop executing?
+
+A.
+Calling the SetPriority() method on a Thread object.
+B.
+Calling the wait() method on an object.
+C.
+Calling notify() method on an object.
+D.
+Calling read() method on an InputStream object.
+
+12.
+Which method registers a thread in a thread scheduler?
+
+A.
+run();
+B.
+construct();
+C.
+start();
+D.
+register();
+
+13.
+public class MyRunnable implements Runnable 
+{
+    public void run() 
+    {
+        // some code here
+    }
+}
+which of these will create and start this thread?
+A.
+new Runnable(MyRunnable).start();
+B.
+new Thread(MyRunnable).run();
+C.
+new Thread(new MyRunnable()).start();
+D.
+new MyRunnable().start();
+
+14.
+void start() {  
+    A a = new A(); 
+    B b = new B(); 
+    a.s(b);  
+    b = null; /* Line 5 */
+    a = null;  /* Line 6 */
+    System.out.println("start completed"); /* Line 7 */
+} 
+When is the B object, created in line 3, eligible for garbage collection?
+A.
+after line 5
+B.
+after line 6
+C.
+after line 7
+D.
+There is no way to be absolutely certain.
+
+15.
+class X2 
+{
+    public X2 x;
+    public static void main(String [] args) 
+    {
+        X2 x2 = new X2();  /* Line 6 */
+        X2 x3 = new X2();  /* Line 7 */
+        x2.x = x3;
+        x3.x = x2;
+        x2 = new X2();
+        x3 = x2; /* Line 11 */
+        doComplexStuff();
+    }
+}
+after line 11 runs, how many objects are eligible for garbage collection?
+A.
+0
+B.
+1
+C.
+2
+D.
+3
+
+16.
+Which of the following would compile without error?
+
+A.
+int a = Math.abs(-5);
+B.
+int b = Math.abs(5.0);
+C.
+int c = Math.abs(5.5F);
+D.
+int d = Math.abs(5L);
+
+17.
+What will be the output of the program?
+
+String x = new String("xyz");
+String y = "abc";
+x = x + y;
+How many String objects have been created?
+A.
+2
+B.
+3
+C.
+4
+D.
+5
+
+18.
+What will be the output of the program?
+
+System.out.println(Math.sqrt(-4D));
+
+A.
+-2
+B.
+NaN
+C.
+Compile Error
+D.
+Runtime Exception
+
+19.
+What will be the output of the program?
+
+public class Test 
+{ 
+    public static void main(String[] args) 
+    {
+        final StringBuffer a = new StringBuffer(); 
+        final StringBuffer b = new StringBuffer(); 
+
+        new Thread() 
+        { 
+            public void run() 
+            {
+                System.out.print(a.append("A")); 
+                synchronized(b) 
+                { 
+                    System.out.print(b.append("B")); 
+                } 
+            } 
+        }.start(); 
+            
+        new Thread() 
+        {
+            public void run() 
+            {
+                System.out.print(b.append("C")); 
+                synchronized(a) 
+                {
+                    System.out.print(a.append("D")); 
+                } 
+            } 
+        }.start(); 
+    } 
+}
+A.
+ACCBAD
+B.
+ABBCAD
+C.
+CDDACB
+D.
+Indeterminate output
+
+20.
+Which statement is true given the following?
+
+Double d = Math.random();
+
+A.
+0.0 < d <= 1.0
+B.
+0.0 <= d < 1.0
+C.
+Compilation fail
+D.
+Cannot say.
+
+-------------------------------------------------------------------------------
+SET 3
+
+1.
+Which two of the following are legal declarations for nonnested classes and interfaces?
+
+final abstract class Test {}
+public static interface Test {}
+final public class Test {}
+protected abstract class Test {}
+protected interface Test {}
+abstract public class Test {}
+A.
+1 and 4
+B.
+2 and 5
+C.
+3 and 6
+D.
+4 and 6
+
+2.
+public class While 
+{
+    public void loop() 
+    {
+        int x= 0;
+        while ( 1 ) /* Line 6 */
+        {
+            System.out.print("x plus one is " + (x + 1)); /* Line 8 */
+        }
+    }
+}
+Which statement is true?
+A.
+There is a syntax error on line 1.
+B.
+There are syntax errors on lines 1 and 6.
+C.
+There are syntax errors on lines 1, 6, and 8.
+D.
+There is a syntax error on line 6.
+
+3.
+What will be the output of the program?
+
+int I = 0;
+    outer:
+    while (true) 
+    {
+        I++;
+        inner:
+        for (int j = 0; j < 10; j++) 
+        {
+            I += j;
+            if (j == 3)
+                continue inner;
+            break outer;
+        }
+        continue outer;
+    }
+System.out.println(I);
+A.
+1
+B.
+2
+C.
+3
+D.
+4
+
+4.
+What will be the output of the program?
+
+public class Test 
+{ 
+    private static float[] f = new float[2]; 
+    public static void main (String[] args) 
+    {
+        System.out.println("f[0] = " + f[0]); 
+    } 
+}
+A.
+f[0] = 0
+B.
+f[0] = 0.0
+C.
+Compile Error
+D.
+Runtime Exception
+
+5.
+Which two statements are true about comparing two instances of the same class, given that the equals() and hashCode() methods have been properly overridden?
+
+If the equals() method returns true, the hashCode() comparison == must return true.
+If the equals() method returns false, the hashCode() comparison != must return true.
+If the hashCode() comparison == returns true, the equals() method must return true.
+If the hashCode() comparison == returns true, the equals() method might return true.
+A.
+1 and 4
+B.
+2 and 3
+C.
+3 and 4
+D.
+1 and 3
+
+6.
+x = 0;
+if (x1.hashCode() != x2.hashCode() )  x = x + 1;
+if (x3.equals(x4) )  x = x + 10;
+if (!x5.equals(x6) ) x = x + 100;
+if (x7.hashCode() == x8.hashCode() )  x = x + 1000;
+System.out.println("x = " + x);
+and assuming that the equals() and hashCode() methods are properly implemented, if the output is "x = 1111", which of the following statements will always be true?
+A.
+x2.equals(x1)
+B.
+x3.hashCode() == x4.hashCode()
+C.
+x5.hashCode() != x6.hashCode()
+D.
+x8.equals(x7)
+
+7.
+class Boo 
+{
+    Boo(String s) { }
+    Boo() { }
+}
+class Bar extends Boo 
+{
+    Bar() { }
+    Bar(String s) {super(s);}
+    void zoo() 
+    {
+    // insert code here
+    }
+}
+which one create an anonymous inner class from within class Bar?
+A.
+Boo f = new Boo(24) { };
+B.
+Boo f = new Bar() { };
+C.
+Bar f = new Boo(String s) { };
+D.
+Boo f = new Boo.Bar(String s) { };
+
+8.
+Which statement is true about a static nested class?
+
+A.
+You must have a reference to an instance of the enclosing class in order to instantiate it.
+B.
+It does not have access to nonstatic members of the enclosing class.
+C.
+It's variables and methods must be static.
+D.
+It must extend the enclosing class.
+
+9.
+Which constructs an anonymous inner class instance?
+
+A.
+Runnable r = new Runnable() { };
+B.
+Runnable r = new Runnable(public void run() { });
+C.
+Runnable r = new Runnable { public void run(){}};
+D.
+System.out.println(new Runnable() {public void run() { }});
+
+10.
+What will be the output of the program?
+
+public class HorseTest 
+{
+    public static void main (String [] args) 
+    {
+        class Horse 
+        {
+            public String name; /* Line 7 */
+            public Horse(String s) 
+            {
+                name = s;
+            }
+        } /* class Horse ends */
+        
+        Object obj = new Horse("Zippo"); /* Line 13 */
+        Horse h = (Horse) obj; /* Line 14 */
+        System.out.println(h.name);
+    }
+} /* class HorseTest ends */
+A.
+An exception occurs at runtime at line 10.
+B.
+It prints "Zippo".
+C.
+Compilation fails because of an error on line 7.
+D.
+Compilation fails because of an error on line 13.
+
+11.
+What will be the output of the program?
+
+public abstract class AbstractTest 
+{
+    public int getNum() 
+    {
+        return 45;
+    }
+    public abstract class Bar 
+    {
+        public int getNum() 
+        {
+            return 38;
+        }
+    }
+    public static void main (String [] args) 
+    {
+        AbstractTest t = new AbstractTest() 
+        {
+            public int getNum() 
+            {
+                return 22;
+            }
+        };
+        AbstractTest.Bar f = t.new Bar() 
+        {
+            public int getNum() 
+            {
+                return 57;
+            }
+        };
+        
+        System.out.println(f.getNum() + " " + t.getNum());
+    }
+}
+A.
+57 22
+B.
+45 38
+C.
+45 57
+D.
+An exception occurs at runtime.
+
+12.
+What will be the output of the program?
+
+public class Q126 implements Runnable 
+{ 
+    private int x; 
+    private int y; 
+
+    public static void main(String [] args) 
+    { 
+        Q126 that = new Q126(); 
+        (new Thread(that)).start( ); /* Line 8 */
+        (new Thread(that)).start( ); /* Line 9 */
+    } 
+    public synchronized void run( ) /* Line 11 */
+    { 
+        for (;;) /* Line 13 */
+        { 
+            x++; 
+            y++; 
+            System.out.println("x = " + x + "y = " + y); 
+        } 
+    } 
+}
+A.
+An error at line 11 causes compilation to fail
+B.
+Errors at lines 8 and 9 cause compilation to fail.
+C.
+The program prints pairs of values for x and y that might not always be the same on the same line (for example, "x=2, y=1")
+D.
+The program prints pairs of values for x and y that are always the same on the same line (for example, "x=1, y=1". In addition, each value appears once (for example, "x=1, y=1" followed by "x=2, y=2")
+
+13.
+What will be the output of the program?
+
+class MyThread extends Thread 
+{
+    public static void main(String [] args) 
+    {
+        MyThread t = new MyThread(); /* Line 5 */
+        t.run();  /* Line 6 */
+    }
+
+    public void run() 
+    {
+        for(int i=1; i < 3; ++i) 
+        {
+            System.out.print(i + "..");
+        }
+    }
+}
+A.
+This code will not compile due to line 5.
+B.
+This code will not compile due to line 6.
+C.
+1..2..
+D.
+1..2..3..
+
+14.
+What will be the output of the program?
+
+public class ThreadTest extends Thread 
+{ 
+    public void run() 
+    { 
+        System.out.println("In run"); 
+        yield(); 
+        System.out.println("Leaving run"); 
+    } 
+    public static void main(String []argv) 
+    { 
+        (new ThreadTest()).start(); 
+    } 
+}
+A.
+The code fails to compile in the main() method
+B.
+The code fails to compile in the run() method
+C.
+Only the text "In run" will be displayed
+D.
+The text "In run" followed by "Leaving run" will be displayed
+
+15.
+What will be the output of the program?
+
+public class Test107 implements Runnable 
+{ 
+    private int x; 
+    private int y; 
+
+    public static void main(String args[]) 
+    {
+        Test107 that = new Test107(); 
+        (new Thread(that)).start(); 
+        (new Thread(that)).start(); 
+    } 
+    public synchronized void run() 
+    {
+        for(int i = 0; i < 10; i++) 
+        { 
+            x++; 
+            y++; 
+            System.out.println("x = " + x + ", y = " + y); /* Line 17 */
+        } 
+    } 
+} 
+A.
+Compilation error.
+B.
+Will print in this order: x = 1 y = 1 x = 2 y = 2 x = 3 y = 3 x = 4 y = 4 x = 5 y = 5... but the output will be produced by both threads running simultaneously.
+C.
+Will print in this order: x = 1 y = 1 x = 2 y = 2 x = 3 y = 3 x = 4 y = 4 x = 5 y = 5... but the output will be produced by first one thread then the other. This is guaranteed by the synchronised code.
+D.
+Will print in this order x = 1 y = 2 x = 3 y = 4 x = 5 y = 6 x = 7 y = 8...
+
+16.
+What allows the programmer to destroy an object x?
+
+A.
+x.delete()
+B.
+x.finalize()
+C.
+Runtime.getRuntime().gc()
+D.
+Only the garbage collection system can destroy an object.
+
+17.
+Which of the following statements is true?
+
+A.
+It is sometimes good practice to throw an AssertionError explicitly.
+B.
+Private getter() and setter() methods should not use assertions to verify arguments.
+C.
+If an AssertionError is thrown in a try-catch block, the finally block will be bypassed.
+D.
+It is proper to handle assertion statement failures using a catch (AssertionException ae) block.
+
+18.
+What will be the output of the program?
+
+public class WrapTest 
+{
+    public static void main(String [] args) 
+    {
+        int result = 0;
+        short s = 42;
+        Long x = new Long("42");
+        Long y = new Long(42);
+        Short z = new Short("42");
+        Short x2 = new Short(s);
+        Integer y2 = new Integer("42");
+        Integer z2 = new Integer(42);
+
+        if (x == y) /* Line 13 */
+            result = 1;
+        if (x.equals(y) ) /* Line 15 */
+            result = result + 10;
+        if (x.equals(z) ) /* Line 17 */
+            result = result + 100;
+        if (x.equals(x2) ) /* Line 19 */
+            result = result + 1000;
+        if (x.equals(z2) ) /* Line 21 */
+            result = result + 10000;
+
+        System.out.println("result = " + result);
+    }
+}
+A.
+result = 1
+B.
+result = 10
+C.
+result = 11
+D.
+result = 11010
+
+19.
+What will be the output of the program?
+
+class Q207 
+{ 
+    public static void main(String[] args) 
+    {
+        int i1 = 5; 
+        int i2 = 6; 
+        String s1 = "7"; 
+        System.out.println(i1 + i2 + s1); /* Line 8 */
+    } 
+}
+A.
+18
+B.
+117
+C.
+567
+D.
+Compiler error
+
+20.
+What will be the output of the program?
+
+public class StringRef 
+{
+    public static void main(String [] args) 
+    {
+        String s1 = "abc";
+        String s2 = "def";
+        String s3 = s2;   /* Line 7 */
+        s2 = "ghi";
+        System.out.println(s1 + s2 + s3);
+    }
+}
+A.
+abcdefghi
+B.
+abcdefdef
+C.
+abcghidef
+D.
+abcghighi
+
+----------------------------------------------------------------------
+
+SET 4
+
+1.
+Which cause a compiler error?
+
+A.
+int[ ] scores = {3, 5, 7};
+B.
+int [ ][ ] scores = {2,7,6}, {9,3,45};
+C.
+String cats[ ] = {"Fluffy", "Spot", "Zeus"};
+D.
+boolean results[ ] = new boolean [] {true, false, true};
+E.
+Integer results[ ] = {new Integer(3), new Integer(5), new Integer(8)};
+
+2.
+Which three are valid method signatures in an interface?
+
+private int getArea();
+public float getVol(float x);
+public void main(String [] args);
+public static void main(String [] args);
+boolean setFlag(Boolean [] test);
+A.
+1 and 2
+B.
+2, 3 and 5
+C.
+3, 4, and 5
+D.
+2 and 4
+
+3.
+What will be the output of the program?
+
+class Super 
+{ 
+    public Integer getLength() 
+    {
+        return new Integer(4); 
+    } 
+} 
+
+public class Sub extends Super 
+{ 
+    public Long getLength() 
+    {
+        return new Long(5); 
+    } 
+
+    public static void main(String[] args) 
+    { 
+        Super sooper = new Super(); 
+        Sub sub = new Sub(); 
+        System.out.println( 
+        sooper.getLength().toString() + "," + sub.getLength().toString() ); 
+    } 
+}
+A.
+4, 4
+B.
+4, 5
+C.
+5, 4
+D.
+Compilation fails.
+
+4.
+What will be the output of the program?
+
+class Test 
+{
+    public static void main(String [] args) 
+    {
+        int x= 0;
+        int y= 0;
+        for (int z = 0; z < 5; z++) 
+        {
+            if (( ++x > 2 ) && (++y > 2)) 
+            {
+                x++;
+            }
+        }
+        System.out.println(x + " " + y);
+    }
+}
+A.
+5 2
+B.
+5 3
+C.
+6 3
+D.
+6 4
+
+5.
+What will be the output of the program?
+
+int i = l, j = -1; 
+switch (i) 
+{
+    case 0, 1: j = 1; /* Line 4 */
+    case 2: j = 2; 
+    default: j = 0; 
+} 
+System.out.println("j = " + j); 
+A.
+j = -1
+B.
+j = 0
+C.
+j = 1
+D.
+Compilation fails.
+
+6.
+What will be the output of the program?
+
+for(int i = 0; i < 3; i++) 
+{ 
+    switch(i) 
+    { 
+        case 0: break; 
+        case 1: System.out.print("one "); 
+        case 2: System.out.print("two "); 
+        case 3: System.out.print("three "); 
+    } 
+} 
+System.out.println("done");
+A.
+done
+B.
+one two done
+C.
+one two three done
+D.
+one two three two three done
+
+7.
+What will be the output of the program?
+
+boolean bool = true; 
+if(bool = false) /* Line 2 */
+{
+    System.out.println("a"); 
+} 
+else if(bool) /* Line 6 */
+{
+    System.out.println("b"); 
+} 
+else if(!bool) /* Line 10 */
+{
+    System.out.println("c"); /* Line 12 */
+} 
+else 
+{
+    System.out.println("d"); 
+}
+A.
+a
+B.
+b
+C.
+c
+D.
+d
+
+8.
+What will be the output of the program?
+
+class Exc0 extends Exception { } 
+class Exc1 extends Exc0 { } /* Line 2 */
+public class Test 
+{  
+    public static void main(String args[]) 
+    { 
+        try 
+        {  
+            throw new Exc1(); /* Line 9 */
+        } 
+        catch (Exc0 e0) /* Line 11 */
+        {
+            System.out.println("Ex0 caught"); 
+        } 
+        catch (Exception e) 
+        {
+            System.out.println("exception caught");  
+        } 
+    } 
+}
+A.
+Ex0 caught
+B.
+exception caught
+C.
+Compilation fails because of an error at line 2.
+D.
+Compilation fails because of an error at line 9.
+
+9.
+public class MyProgram 
+{
+    public static void throwit() 
+    {
+        throw new RuntimeException();
+    }
+    public static void main(String args[])
+    {
+        try 
+        {
+            System.out.println("Hello world ");
+            throwit();
+            System.out.println("Done with try block ");
+        }
+        finally 
+        {
+            System.out.println("Finally executing ");
+        }
+    }
+}
+which answer most closely indicates the behavior of the program?
+A.
+The program will not compile.
+B.
+The program will print Hello world, then will print that a RuntimeException has occurred, then will print Done with try block, and then will print Finally executing.
+C.
+The program will print Hello world, then will print that a RuntimeException has occurred, and then will print Finally executing.
+D.
+The program will print Hello world, then will print Finally executing, then will print that a RuntimeException has occurred.
+
+10.
+Which interface provides the capability to store objects using a key-value pair?
+
+A.
+Java.util.Map
+B.
+Java.util.Set
+C.
+Java.util.List
+D.
+Java.util.Collection
+
+11.
+Which of the following statements about the hashcode() method are incorrect?
+
+The value returned by hashcode() is used in some collection classes to help locate objects.
+The hashcode() method is required to return a positive int value.
+The hashcode() method in the String class is the one inherited from Object.
+Two new empty String objects will produce identical hashcodes.
+A.
+1 and 2
+B.
+2 and 3
+C.
+3 and 4
+D.
+1 and 4
+
+12.
+What will be the output of the program?
+
+public class TestObj 
+{
+    public static void main (String [] args) 
+    {
+        Object o = new Object() /* Line 5 */
+        {
+            public boolean equals(Object obj) 
+            {
+                return true;
+            } 
+        }      /* Line 11 */
+        
+        System.out.println(o.equals("Fred"));
+    }
+}
+A.
+It prints "true".
+B.
+It prints "Fred".
+C.
+An exception occurs at runtime.
+D.
+Compilation fails
+
+13.
+Which of the following will directly stop the execution of a Thread?
+
+A.
+wait()
+B.
+notify()
+C.
+notifyall()
+D.
+exits synchronized code
+
+14.
+Which class or interface defines the wait(), notify(),and notifyAll() methods?
+
+A.
+Object
+B.
+Thread
+C.
+Runnable
+D.
+Class
+
+15.
+What will be the output of the program?
+
+public class ThreadDemo 
+{ 
+    private int count = 1; 
+    public synchronized void doSomething() 
+    { 
+        for (int i = 0; i < 10; i++) 
+            System.out.println(count++); 
+    } 
+    public static void main(String[] args) 
+    { 
+        ThreadDemo demo = new ThreadDemo(); 
+        Thread a1 = new A(demo); 
+        Thread a2 = new A(demo); 
+        a1.start(); 
+        a2.start(); 
+    } 
+} 
+class A extends Thread 
+{ 
+    ThreadDemo demo; 
+    public A(ThreadDemo td) 
+    { 
+        demo = td; 
+    } 
+    public void run() 
+    { 
+        demo.doSomething(); 
+    } 
+}
+A.
+It will print the numbers 0 to 19 sequentially
+B.
+It will print the numbers 1 to 20 sequentially
+C.
+It will print the numbers 1 to 20, but the order cannot be determined
+D.
+The code will not compile.
+
+16.
+Which two can be used to create a new Thread?
+
+Extend java.lang.Thread and override the run() method.
+Extend java.lang.Runnable and override the start() method.
+Implement java.lang.Thread and implement the run() method.
+Implement java.lang.Runnable and implement the run() method.
+Implement java.lang.Thread and implement the start() method.
+A.
+1 and 2
+B.
+2 and 3
+C.
+1 and 4
+D.
+3 and 4
+
+17.
+The following block of code creates a Thread using a Runnable target:
+
+Runnable target = new MyRunnable();
+Thread myThread = new Thread(target);
+Which of the following classes can be used to create the target, so that the preceding code compiles correctly?
+A.
+public class MyRunnable extends Runnable{public void run(){}}
+B.
+public class MyRunnable extends Object{public void run(){}}
+C.
+public class MyRunnable implements Runnable{public void run(){}}
+D.
+public class MyRunnable implements Runnable{void run(){}}
+
+18.
+public class Myfile 
+{ 
+    public static void main (String[] args) 
+    {
+        String biz = args[1]; 
+        String baz = args[2]; 
+        String rip = args[3]; 
+        System.out.println("Arg is " + rip); 
+    } 
+}
+Select how you would start the program to cause it to print: Arg is 2
+A.
+java Myfile 222
+B.
+java Myfile 1 2 2 3 4
+C.
+java Myfile 1 3 2 2
+D.
+java Myfile 0 1 2 3
+
+19.
+What will be the output of the program?
+
+int i = (int) Math.random();
+A.
+i = 0
+B.
+i = 1
+C.
+value of i is undetermined
+D.
+Statement causes a compile error
+
+20.
+What will be the output of the program?
+
+class A 
+{ 
+    public A(int x){} 
+} 
+class B extends A { } 
+public class test 
+{ 
+    public static void main (String args []) 
+    {
+        A a = new B(); 
+        System.out.println("complete"); 
+    } 
+}
+A.
+It compiles and runs printing nothing
+B.
+Compiles but fails at runtime
+C.
+Compile Error
+D.
+Prints "complete"
+
